@@ -1,0 +1,24 @@
+{
+  "name": "adidas-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.3",
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "husky": "^0.13.3"
+  },
+  "now": {
+    "alias": "erodionov-adidas-fake-api"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "deploy": "now --public -e BUILD_DATE=$(date +%Y%m%d%H%M) -e NODE_ENV=production",
+    "alias": "now alias",
+    "prepush": "npm run deploy && npm run alias"
+  }
+}
